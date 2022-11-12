@@ -8,7 +8,7 @@ resource "heroku_app" "durblam_staging" {
 }
 
 resource "heroku_addon" "durblam_staging_db" {
-  app = "heroku_app.durblam-staging.id"
+  app = heroku_app.durblam_staging.id
   plan   = "heroku-postgresql:hobby-dev"
 }
 
