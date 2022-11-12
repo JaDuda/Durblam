@@ -8,7 +8,7 @@ resource "heroku_app" "durblam" {
 }
 
 resource "heroku_addon" "durblam" {
-  app_id = "heroku_app.durblam.id"
+  app = "heroku_app.durblam.id"
   plan   = "heroku-postgresql:hobby-dev"
 }
 
@@ -18,7 +18,7 @@ resource "heroku_pipeline" "durblam" {
 
 # Couple app to pipeline
 resource "heroku_pipeline_coupling" "staging_pipeline_coupling" {
-  app_id = heroku_app.durblam.id
+  app = heroku_app.durblam.id
   pipeline = heroku_pipeline.durblam.id
   stage = "staging"
 }
