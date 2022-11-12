@@ -1,5 +1,5 @@
-resource "heroku_app" "Durblam" {
-  name   = "Durblam"
+resource "heroku_app" "durblam" {
+  name   = "durblam"
   region = "eu"
 
   buildpacks = [
